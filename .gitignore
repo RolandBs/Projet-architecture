@@ -1,7 +1,4 @@
-# dependencies
-#/downloader_front/node_modules
-
-
 # misc
 .idea
 .DS_Store
+/downloader-front/node_modules/
