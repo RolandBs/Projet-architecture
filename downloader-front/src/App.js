@@ -6,24 +6,31 @@ import FormatSelector from "./Composant/FormatSelector";
 // "proxy": "http://localhost:8000",
 
 function App() {
-  const [url, setUrl] = useState("");
-  const [videoName, setVideoName] = useState("");
-  const [formatChoice, setFormatChoice] = useState("opus");
+  const [url, setUrl] = useState('');
+  const [videoName, setVideoName] = useState('');
+  const [installPath, setInstallPath] = useState('');
+  const [formatChoice, setFormatChoice] = useState('opus');
 
-  const handleSubmit = async (e) => {
+
+ const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("http://localhost:8000/api/download/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: new URLSearchParams({
-        url,
-        video_name: videoName,
-        format_choice: formatChoice,
-      }),
-    });
+    const selectedPath = window.prompt('Specify installation path:', installPath);
+    setInstallPath(selectedPath);
+
+    const response = await fetch('http://localhost:8000/api/download/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams({
+          url,
+          video_name: videoName,
+          format_choice: formatChoice,
+          install_path: selectedPath,
+
+        }),
+      });
   };
 
   return (

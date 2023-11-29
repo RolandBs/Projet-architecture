@@ -7,23 +7,20 @@ def download_audio(request):
 
     if request.method == 'POST':
         url = request.POST.get('url')
-        video_name = request.POST.get('video_name')
         format_choice = request.POST.get('format_choice')
-
-        print(f"url: {url}, video_name: {video_name}, format_choice: {format_choice}")
+        install_path = request.POST.get('install_path')
 
         ydl_opts = {
-            'format': format_choice + '/bestaudio/best',
+            'format': format_choice+'/bestaudio/best',
             "ignoreerrors": True,
             "outtmpl": {
-                "default": f"media/%(title)s.%(ext)s",
+                "default": f"{install_path}/%(title)s.%(ext)s",
             },
             "postprocessors": [
                 {
                     "key": "FFmpegVideoConvertor",
                     "preferedformat": format_choice,
-             }, ],
-           #     "prefer_ffmpeg": True,
+                }, ],
         }
         if "youtube" in url or "youtu.be" in url:
             # Si playlist change le template d'output
