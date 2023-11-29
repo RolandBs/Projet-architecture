@@ -1,38 +1,131 @@
-.App {
-  text-align: center;
+/* Global styles */
+body {
+  background-color: grey;
 }
 
-.App-logo {
-  height: 40vmin;
+/* Layout containers */
+Form {
+  margin-top: 70px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.Title {
+  display: flex;
+  justify-content: center;
+  text-shadow: 2px 2px 4px #000000;
+  animation: popUp 2s ease-in-out;
+}
+
+.OuterContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  padding: 20px;
+  background-color: #1e033c;
+  animation: popUp 2s ease-in-out;
+}
+
+.Container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #042151;
+  padding: 50px;
+  width: 430px;
+  height: 170px;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+/* Input.jsx */
+.InputField {
+  background-color: #2b0556;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  margin: 0;
+}
+
+/* InstallationPath.jsx */
+.BrowseButton {
+  width: 220px;
+  height: 30px;
+  background-color: #2b0556;
+  color: white;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 5px 10px;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.BrowseButton:hover {
+  background-color: #3c0878;
+  border-color: #fff;
+}
+
+/* FormatSelector */
+.SelectField {
+  width: 220px;
+  height: 30px;
+  background-color: #2b0556;
+  color: #fff;
+  border: 2px solid #2b0556;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  font-size: 16px;
+  font-weight: bold;
+  text-align-last: center;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.SelectField::-ms-expand {
+  display: none;
+}
+
+.SelectField::after {
+  content: '▼';
+  font-size: 12px;
+  position: absolute;
+  right: 10px;
+  top: 0;
+  bottom: 0;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* DownloadButton */
+.DownloadButton {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  width: 95%;
+  margin: 20px auto;
+  padding: 15px 30px;
+  font-size: 18px;
   color: white;
+  background-color: #2b0556;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+  animation: popUp 2s ease-in-out;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.DownloadButton:hover {
+  background-color: #682c88;
+  border-color: #fff;
 }
