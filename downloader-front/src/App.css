@@ -18,6 +18,11 @@ Form {
   animation: popUp 2s ease-in-out;
 }
 
+.SubTitle {
+  display: flex;
+  justify-content: space-around;
+}
+
 .OuterContainer {
   display: flex;
   justify-content: center;
@@ -26,6 +31,7 @@ Form {
   padding: 20px;
   background-color: #1e033c;
   animation: popUp 2s ease-in-out;
+  border-radius: 10px;
 }
 
 .Container {
@@ -39,6 +45,7 @@ Form {
   height: 170px;
   box-sizing: border-box;
   color: #fff;
+  border-radius: 10px;
 }
 
 /* Input.jsx */
@@ -48,6 +55,7 @@ Form {
   border: none;
   padding: 10px;
   margin: 0;
+  border-radius: 10px;
 }
 
 /* InstallationPath.jsx */
@@ -74,14 +82,11 @@ Form {
   width: 220px;
   height: 30px;
   background-color: #2b0556;
-  color: #fff;
+  color: white;
   border: 2px solid #2b0556;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 5px 10px;
   cursor: pointer;
-  appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
   font-size: 16px;
   font-weight: bold;
   text-align-last: center;
@@ -90,17 +95,16 @@ Form {
 }
 
 .SelectField::-ms-expand {
-  display: none;
+  display: none; /* Cacher la flèche sur Internet Explorer */
 }
 
+/* Pseudo-élément pour simuler la flèche */
 .SelectField::after {
-  content: '▼';
-  font-size: 12px;
+  content: '▼'; /* Texte ou forme représentant une flèche vers le bas */
   position: absolute;
-  right: 10px;
-  top: 0;
-  bottom: 0;
-  pointer-events: none;
+  top: 50%; /* Ajustez la position verticale */
+  right: 10px; /* Ajustez la position horizontale */
+  transform: translateY(-50%); /* Centre la flèche verticalement */
 }
 
 /* DownloadButton */
@@ -117,12 +121,12 @@ Form {
   color: white;
   background-color: #2b0556;
   border: 2px solid transparent;
-  border-radius: 5px;
   cursor: pointer;
   text-align: center;
   text-transform: uppercase;
   transition: background-color 0.3s ease;
   animation: popUp 2s ease-in-out;
+  border-radius: 10px;
 }
 
 .DownloadButton:hover {

@@ -1,15 +1,13 @@
 import React, { useState } from "react";
 import "./App.css";
 import InputUrl from "./Composant/InputUrl";
-import NameVideo from "./Composant/NameVideo";
 import FormatSelector from "./Composant/FormatSelector";
 // "proxy": "http://localhost:8000",
 
 function App() {
   const [url, setUrl] = useState('');
-  const [videoName, setVideoName] = useState('');
   const [installPath, setInstallPath] = useState('');
-  const [formatChoice, setFormatChoice] = useState('opus');
+  const [formatChoice, setFormatChoice] = useState('mp3');
 
 
  const handleSubmit = async (e) => {
@@ -25,7 +23,6 @@ function App() {
         },
         body: new URLSearchParams({
           url,
-          video_name: videoName,
           format_choice: formatChoice,
           install_path: selectedPath,
 

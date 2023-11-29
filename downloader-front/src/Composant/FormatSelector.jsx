@@ -5,7 +5,7 @@ export default function FormatSelector({formatChoice, setFormatChoice}) {
     <div className="OuterContainer">
       <div className="Container">
         <label>
-          <h2>Format :</h2>
+          <h2 className="SubTitle">Format :</h2>
           <select 
             className="SelectField"
             value={formatChoice}
